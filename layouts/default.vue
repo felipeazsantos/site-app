@@ -3,8 +3,11 @@
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6"> Portfólio </v-list-item-title>
-          <v-list-item-subtitle> Felipe Azevedo dos Santos </v-list-item-subtitle>
+           <v-avatar class="pa-2" size="80">
+             <img src="https://github.com/felipeazsantos.png"  />
+          </v-avatar>
+          <v-list-item-title class="text-h6 text-center"> Portfólio </v-list-item-title>
+          <v-list-item-subtitle class="text-center"> Felipe Azevedo dos Santos </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
 
@@ -32,17 +35,25 @@
     <v-main>
       <Nuxt />
     </v-main>
+
+     <v-footer app>
+        <Footer />
+    </v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
+import Footer from '@/components/home/Footer.vue'
+
 export default {
   name: "DefaultLayout",
+  components: { Footer },
   data() {
     return {
       drawer: null,
       items: [
           { title: 'Home', icon: 'mdi-home-circle-outline' },
+          { title: 'Experiência', icon: 'mdi-book-account-outline' },
           { title: 'Projetos', icon: 'mdi-code-tags' },
           { title: 'Sobre', icon: 'mdi-help-box' },
           { title: 'Contato', icon: 'mdi-email-outline' },
@@ -54,6 +65,7 @@ export default {
 </script>
 
 <style>
+
  .menu-item-title {
     font-size: 16px;
  }
