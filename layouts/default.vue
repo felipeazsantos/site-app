@@ -3,7 +3,7 @@
     <v-navigation-drawer app permanent expand-on-hover mini-variant dark>
 
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link :href="item.link">
           <v-list-item-icon>
             <v-icon size="30">{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -23,6 +23,10 @@
       <Nuxt />
     </v-main>
 
+    <v-footer app>
+      <Footer />
+    </v-footer>
+
   </v-app>
 </template>
 
@@ -36,11 +40,11 @@ export default {
     return {
       drawer: false,
       items: [
-          { title: 'Home', icon: 'mdi-home-circle-outline' },
-          { title: 'Experiência', icon: 'mdi-book-account-outline' },
-          { title: 'Projetos', icon: 'mdi-code-tags' },
-          { title: 'Sobre', icon: 'mdi-help-box' },
-          { title: 'Contato', icon: 'mdi-email-outline' },
+          { title: 'Sobre', icon: 'mdi-account-eye-outline', link: "#about" },
+          { title: 'Tecnologias', icon: 'mdi-code-tags', link: "#technologies" },
+          { title: 'Experiência', icon: 'mdi-badge-account-horizontal-outline', link: "#worketAt" },
+          { title: 'Projetos', icon: 'mdi-widgets', link: "#projects" },
+          { title: 'Contato', icon: 'mdi-email-outline', link: "#contact" },
         ],
       right: null,
     };
