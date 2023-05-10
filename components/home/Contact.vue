@@ -1,13 +1,14 @@
 <template>
-    <v-row>
-      <v-col>
-        <h2 class="indigo--text text--darken-2 text-center pb-4 text-uppercase">Contato</h2>
-      </v-col>
-    </v-row>
+    <div>
+      <SectionTitle title="Contato" />
+    </div>
 </template>
 
 <script>
+import SectionTitle from './SectionTitle.vue'
+
 export default {
+  components: {SectionTitle},
 
 }
 </script>

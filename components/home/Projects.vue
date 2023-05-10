@@ -1,95 +1,64 @@
 <template>
   <div>
-    <v-row>
-      <v-col>
-        <h2 class="grey--text text--darken-2 text-center pb-4 text-uppercase">
-          Projetos
-        </h2>
-      </v-col>
-    </v-row>
+    <SectionTitle title="Projetos" />
     <v-row>
       <v-col class="d-flex justify-center align-center px-2 flex-wrap">
-        <v-hover
-          v-slot="{ hover }"
-          v-for="project in projects"
-          :key="project.name"
-          class="my-2"
-        >
-          <v-card
-            :elevation="hover ? 12 : 2"
-            class="mx-auto"
-            height="300"
-            max-width="300"
-            width="300"
-          >
-            <v-card-text class="my-4 text-center text-h6">
-              {{ project.name }}
-            </v-card-text>
-          </v-card>
-        </v-hover>
+        <div v-for="project in projects" :key="project.name">
+          <h3 class="blue--text text--accent-2 text-center mt-4">{{ project.name }}</h3>
+          <v-hover v-slot="{ hover }" class="mt-4">
+            <v-card
+              :elevation="hover ? 12 : 2"
+              class="mx-auto"
+              height="300"
+              max-width="300"
+              width="300"
+              :img="project.picture"
+            >
+            </v-card>
+          </v-hover>
+        </div>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
+import SectionTitle from './SectionTitle.vue'
+
 export default {
+  components: {SectionTitle},
   data() {
     return {
       projects: [
         {
           name: "Vue todo list",
           description: "",
-          picture: "",
+          picture: require("@/assets/vue-todo-list.jpg"),
           technologies: [],
         },
         {
-          name: "Vue todo list2",
+          name: "Base de conhecimento",
           description: "",
           picture: "",
-          technologies: [],
+          technologies: ["Vue.js", "Node.js", "Express", "Consign", "Knex"],
         },
         {
-          name: "Vue todo list3",
+          name: "Treinatweet",
           description: "",
           picture: "",
-          technologies: [],
+          technologies: ["React"],
         },
         {
-          name: "Vue todo list4",
+          name: "Stock trader",
           description: "",
           picture: "",
-          technologies: [],
+          technologies: ["Vue.js", "Vuex", "Firebase", "Vuetify"],
         },
         {
-          name: "Vue todo list5",
+          name: "Matador de Monstro",
           description: "",
           picture: "",
-          technologies: [],
-        },
-        {
-          name: "Vue todo list6",
-          description: "",
-          picture: "",
-          technologies: [],
-        },
-        {
-          name: "Vue todo list7",
-          description: "",
-          picture: "",
-          technologies: [],
-        },
-        {
-          name: "Vue todo list8",
-          description: "",
-          picture: "",
-          technologies: [],
-        },
-        {
-          name: "Vue todo list9",
-          description: "",
-          picture: "",
-          technologies: [],
+          technologies: ["Vue.js"],
         },
       ],
     };
