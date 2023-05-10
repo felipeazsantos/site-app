@@ -17,8 +17,6 @@
       </v-list>
     </v-navigation-drawer>
 
-    
-
     <v-main>
       <Nuxt />
     </v-main>
