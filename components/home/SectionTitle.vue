@@ -1,7 +1,7 @@
 <template>
     <v-row>
         <v-col>
-        <h2 class="blue--text text--darken-3 text-center pb-4">
+        <h2 :id="id" class="blue--text text--darken-3 text-center pb-4 text-h4 font-weight-medium">
             {{ title }}
         </h2>
         </v-col>
@@ -11,7 +11,8 @@
 <script>
 export default {
     props: {
-        title: String
+        title: String,
+        id: String
     }
 }
 </script>

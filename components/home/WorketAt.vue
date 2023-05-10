@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionTitle title="Minha trajetória profissional" />
+    <SectionTitle title="Minha trajetória profissional" id="worketAt" />
     <v-row>
       <v-col>
         <v-timeline>
@@ -8,16 +8,16 @@
             v-for="(company, index) in companiesWorked.reverse()"
             :key="company.name"
             :class="{ 'text-right': index % 2 == 1 }"
-            color="grey darken-2"
+            color="blue darken-3"
           >
-            <h3 class="pb-4 grey--text text--darken-2 text-h5 font-weight-bold">
+            <h3 class="pb-4 black--text text--darken-3 text-h6 font-weight-bold">
               {{ company.name }} ({{ company.period }})
             </h3>
 
             <v-expansion-panels>
               <v-expansion-panel v-for="role in company.roles.reverse()" :key="role.name">
                 <v-expansion-panel-header
-                  class="grey--text text--darken-2 font-weight-medium text-h6"
+                  class="black--text text--accent-2 font-weight-medium text-subtitle-1"
                 >
                   {{ role.name }}
                 </v-expansion-panel-header>

@@ -1,6 +1,6 @@
 <template>
     <div>
-      <SectionTitle title="Contato" />
+      <SectionTitle title="Contato" id="contact" />
     </div>
 </template>
 

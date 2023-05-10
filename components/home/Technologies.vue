@@ -1,13 +1,13 @@
 <template>
   <div>
-      <SectionTitle title="Minha trajetório profissional" />
+      <SectionTitle title="Principais tecnologias que trabalho" id="technologies" />
       <v-row>
         <v-col xs="12">
           <ul class="technologies-list">
             <li
               class="technologies-items"
               v-for="technologie in technologies"
-              :key="technologie"
+              :key="technologie.name"
             >
               <v-sheet
                 outlined
